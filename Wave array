@@ -1,0 +1,16 @@
+class Solution {
+    public static void convertToWave(int n, int[] a) {
+        int i;
+        for( i=0;i<n-1;i++){
+            if(((i+1)%2)!=0){
+                int c=a[i+1];
+                a[i+1]=a[i];
+                a[i]=c;
+            }
+                System.out.print(a[i]+" "); 
+        }
+        System.out.print(a[n-1]);
+        System.out.println();
+    }
+}
+        
