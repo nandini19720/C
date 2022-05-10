@@ -1,0 +1,13 @@
+class Solution {
+    int remove_duplicate(int A[],int N){
+        int temp= A[0];
+        System.out.print(temp+" ");
+        for(int i=0; i<N;i++){
+            if(temp!=A[i]){
+                System.out.print(A[i]+" ");
+                temp=A[i];
+            }
+        }
+        return -1;
+    }
+}
