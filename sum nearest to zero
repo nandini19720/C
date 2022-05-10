@@ -1,0 +1,28 @@
+
+class Sol
+{
+    public static int closestToZero (int arr[], int n)
+    {
+        Arrays.sort(arr);
+        int i=0;
+            int j = n-1;
+       int maxSum = arr[0] + arr[n-1];
+       while(i < j){
+           int currSum = arr[i] + arr[j];
+           if(currSum  == 0)
+               return 0 ;
+        if(currSum < 0){
+               i++;
+           }else{
+               j--;
+           }
+           if(Math.abs(currSum) < Math.abs(maxSum)){
+               maxSum = currSum;
+           }
+           if(Math.abs(currSum) == Math.abs(maxSum)){
+               maxSum = Math.max(currSum,maxSum);
+           }
+       }
+           return maxSum;
+    }
+}
