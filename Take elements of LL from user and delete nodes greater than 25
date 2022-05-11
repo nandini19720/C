@@ -1,0 +1,21 @@
+import java.util.*;
+class LL{
+    public static void main(String args[]){
+        LinkedList<Integer> list=new LinkedList<Integer>();
+        Scanner sc= new Scanner(System.in);
+         System.out.println("enter elements -> ");
+        int num = sc.nextInt(); 
+        while(num>0){
+            list.add(sc.nextInt());
+            num--;
+        }
+        sc.close();
+        System.out.println(list);
+        for(int i=0;i<list.size();i++){
+            if(list.get(i)>25){
+                list.remove(list.get(i));
+                System.out.println(list);
+            }
+        }
+    }
+}
