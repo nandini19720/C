@@ -1,0 +1,50 @@
+class Solution
+{
+    //Function to remove a loop in the linked list.
+    public static void removeLoop(Node head){
+        Node hare=head;
+        Node turtle=head;
+        while(hare!=null&&hare.next!=null){
+             hare=hare.next.next;
+              turtle=turtle.next;
+             if(hare==turtle){
+              break;      
+             }   
+        }
+        if(turtle!=hare){
+            return;
+        }
+        turtle=head;
+        if(turtle==hare){
+            while(hare.next!=turtle){
+                hare=hare.next;
+                
+            }
+        }
+        else{
+            while(turtle.next!=hare.next){
+                turtle=turtle.next;
+                hare=hare.next;
+            }
+        }
+        hare.next=null;
+        
+  
+        }
+}
+        
+       
+        
+        // code here
+        // remove the loop without losing any nodes
+       /* while(head!=null){
+            head.data=-1;
+            if(head.next!=null&& head.next.data==-1){
+                head.next=null;
+                break;
+            }
+            head=head.next;
+        }
+    }
+}
+*/
