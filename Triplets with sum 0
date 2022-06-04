@@ -1,0 +1,27 @@
+class Solution
+{
+    // arr[]: input array
+    // n: size of the array
+    //Function to find triplets with zero sum.
+	public boolean findTriplets(int arr[] , int n)
+    {
+       for(int i=0;i<n-2;i++){
+           if(sumOfOtherTwo(arr[i],arr,i,n)==0){
+               return true;
+           }
+       }
+       return false;
+          
+        
+    }
+    public int sumOfOtherTwo(int sum, int[] arr, int i, int n){
+        for(int y=i+1;y<n;y++){
+            for(int k=y+1;k<n;k++){
+                if(sum+arr[y]+arr[k]==0){
+                    return 0;
+                }
+            }
+        }
+        return -1;
+    }
+}
