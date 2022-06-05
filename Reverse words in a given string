@@ -1,0 +1,15 @@
+class Solution 
+{
+    //Function to reverse words in a given string.
+    String reverseWords(String S)
+    {
+        String sp[]=S.split("\\.");
+        String ans=sp[sp.length-1];
+        for(int i=sp.length-2;i>=0;i--){
+          ans=ans+'.'+sp[i];
+                
+            }
+            return ans;
+        }
+        
+    }
