@@ -1,0 +1,7 @@
+class GfG {
+    int convertfive(int num) {
+        String s=""+num;
+        s=s.replace("0","5");
+        num=Integer.parseInt(s);
+        return num;
+        
