@@ -1,0 +1,25 @@
+class Solution
+{
+    //Function to remove duplicates from unsorted linked list.
+    public Node removeDuplicates(Node head) 
+    {
+          int [] a=new int[1000000];  //declaring a constant array
+   Node current=head;         //pointer no 01
+   Node prev=null;           //pointer no 02
+      
+        while(current!=null){
+           if(a[current.data]==0){
+               a[current.data]=1;}
+           else{
+               prev.next=current.next;
+               current=prev;
+               
+           }
+           prev=current;
+            current=current.next;
+         
+        }
+        return head;
+       
+    }
+}
