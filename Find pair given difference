@@ -1,0 +1,22 @@
+class Solution
+{
+    public boolean findPair(int arr[], int size, int n)
+    {
+        Arrays.sort(arr);
+        int p1=0, p2=1;
+        while(p2<size){
+            if((arr[p2]-arr[p1])==n){
+                return true;
+            }else if((arr[p2]-arr[p1])>n){
+                p1++;
+                if(p1==p2){
+                    p2++;
+                }
+            }
+            else {
+                p2++;
+            }
+        }
+        return false;
+    }
+}
