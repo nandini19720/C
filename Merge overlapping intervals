@@ -1,0 +1,21 @@
+class Solution
+{
+    public int[][] overlappedInterval(int[][] Intervals)
+    {
+        int index=0;
+        Arrays.sort(Intervals, (a,b)->a[0]-b[0]);
+        for(int i=0;i<Intervals.length;i++){
+           if(Intervals[index][1]>=Intervals[i][0]){
+               Intervals[index][1]=Math.max(Intervals[index][1],Intervals[i][1]);
+               
+           }
+           else{
+               index++;
+               Intervals[index]=Intervals[i];
+           }
+        }
+        return Arrays.copyOfRange(Intervals,0,index+1);
+        
+        
+    }
+}
