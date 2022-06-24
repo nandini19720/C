@@ -1,1 +1,46 @@
-Class gfg{
+class Solution
+{
+    //Function to sort a linked list of 0s, 1s and 2s.
+    static Node segregate(Node head)
+    {
+        int zeroes=0;
+        int ones=0;
+        int twos=0;
+        Node curr=head;
+        while(curr!=null){
+            if(curr.data==0){
+                zeroes++;
+            }
+            else if(curr.data==1){
+                ones++;
+                
+            }
+            else{
+                twos++;
+            }
+            curr=curr.next;
+        }
+        
+         curr=head;
+         while(curr!=null){
+             if(zeroes!=0){
+                 curr.data=0;
+                 zeroes--;
+             }
+             else if(ones!=0){
+                 curr.data=1;
+                 ones--;
+             }
+             else{
+                 curr.data=2;
+                 twos--;
+             }
+             curr=curr.next;
+         }
+         return head;
+        
+    }
+}
+
+
+
