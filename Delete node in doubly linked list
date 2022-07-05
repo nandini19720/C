@@ -1,0 +1,40 @@
+/* Structure of linkedlist node
+class Node
+{
+	int data;
+	Node next;
+	Node prev;
+	Node(int d)
+	{
+		data = d;
+		next = prev = null;
+	}
+}
+*/
+class Solution
+{
+    // function returns the head of the linkedlist
+    Node deleteNode(Node head,int x)
+    {
+        Node curr=head;
+        int count =1;
+        if(count==x){
+            Node temp=head.next;
+            head=null;
+            return temp;
+        }
+        while(curr!=null){
+            
+            if(count==x){
+                curr.prev.next=curr.next;
+               
+                
+            
+            }
+            curr=curr.next;
+            count++;
+        }
+        return head;
+		
+    }
+}
