@@ -1,0 +1,24 @@
+class GfG{
+    void sol(Stack<Integer>st){
+        if(st.size()==0||st.size()==1)
+        return ;
+        int temp=st.pop();
+        sol(st);
+        Stack<Integer>sst=new Stack<>();
+        while(!st.isEmpty() && st.peek()>=temp){
+            sst.push(st.pop());
+        }
+        st.push(temp);
+        while(!sst.isEmpty()){
+            st.push(sst.pop());
+        }
+        return;
+    }
+	public Stack<Integer> sort(Stack<Integer> s)
+	{sol(s);
+	return s;
+	    
+	   
+		
+	}
+}
