@@ -1,0 +1,28 @@
+Node is as follows:
+class Node{
+    int data;
+    Node left,right;
+    Node(int d){
+    	data=d;
+    	left=null;
+    	right=null;
+    }
+}*/
+
+class Solution{
+    int sum(Node root){
+        if(root==null){
+            return 0;
+        }
+        int a=sum(root.left);
+        int b=sum(root.right);
+        int x=root.data;
+        root.data=a+b;
+        return root.data+x;
+    }
+    public void toSumTree(Node root){
+        
+        sum(root);
+        
+    }
+}
