@@ -1,0 +1,67 @@
+/*
+class Node
+{
+    int data;
+    Node left;
+    Node right;
+    Node(int data)
+    {
+        this.data = data;
+        left=null;
+        right=null;
+    }
+}
+*/
+class Solution
+{
+    ArrayList<Integer> list=new ArrayList<>();
+    void inOrder(Node root,list){
+        if(root==null)
+        return ;
+        inOrder(root.left);
+        list.add(root.data);
+        inOrder(root.right);
+        
+        
+    }
+    // return the Kth largest element in the given BST rooted at 'root'
+    public int kthLargest(Node root,int K)
+    {
+        inOrder(root,list);
+        Collections.sort(list);
+        return list[k-1];
+        return -1;
+        
+        
+    }
+}
+
+
+
+//OR
+class Solution
+{
+  int max=0;
+  int count=0;
+  public void check(Node root,int K)
+  {
+      if(root==null)
+      return;
+      check(root.right,K);
+      if(count<K)
+      {
+          count++;
+          if(count==K)
+          {
+              max=root.data;
+          }
+      }
+      check(root.left,K);
+  }
+   public int kthLargest(Node root,int K)
+   {
+       check(root,K);
+       return max;
+       
+   }
+}
