@@ -1,0 +1,31 @@
+class Complete{
+    
+   
+    // Function for finding maximum and value pair
+    public static ArrayList<Integer> reaching_height (int n, int arr[]) {
+        ArrayList<Integer> a=new ArrayList<>();
+        if(n==1){
+            a.add(arr[0]);
+            return a;
+        }
+        Arrays.sort(arr);
+        int i=0,j=n-1, count=0;
+        while(i<=j){
+           count+=arr[j]-arr[i];
+           a.add(arr[j--]);
+           a.add(arr[i++]);
+        }
+         if(n % 2 != 0) 
+            a.remove(a.size() - 1);
+        if(count <= 0) {
+            a.clear();
+            a.add(-1);
+        }
+        return a;
+        
+       
+     
+    }
+    
+    
+}
