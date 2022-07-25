@@ -1,0 +1,39 @@
+
+/* Node of a linked list
+ class Node {
+   int data;
+    Node next;
+    Node(int d)  { data = d;  next = null; }
+}
+ Linked List class
+class LinkedList
+{
+    Node head;  // head of list
+}*/
+
+class Intersect
+{
+    //Function to find intersection point in Y shaped Linked Lists.
+	int intersectPoint(Node head1, Node head2)
+	{
+	       Node f=head1;
+        Node s=head2;
+        
+        
+        Node next=f.next;
+        while(f!=null){
+            next=f.next;
+            f.next=null;
+            f=next;
+           }
+           while(s.next!=null){
+               s=s.next;
+           
+       
+           }
+           return s.data;
+	
+	}
+}
+
+
