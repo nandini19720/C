@@ -1,0 +1,45 @@
+/*node class of the linked list
+
+class Node
+{
+    int data;
+    Node next;
+    Node(int key)
+    {
+        data = key;
+        next = null;
+    }
+}
+
+*/
+
+class Solution
+{
+    public static Node reverse(Node node, int k)
+    {
+        Node prev=null;
+        Node next=null;
+        Node curr=node;
+        int i=0;
+    
+       if(node==null || node.next==null){
+           return node;
+           
+       }
+        while(i<k&& curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+            i++;
+            
+        }
+       if(curr!=null)
+        {
+          node.next=reverse(curr,k);
+        }
+        return prev;
+        
+    }
+}
+
