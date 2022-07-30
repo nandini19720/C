@@ -1,0 +1,23 @@
+class GFG
+{
+    ArrayList<Long> find(long arr[], int n, int x)
+    {
+       
+      ArrayList<Long> al = new  ArrayList<Long>();
+       long firstIndex = -1;
+       long lastIndex = -1;
+       
+       for(int i=0; i<n; i++){
+           if(arr[i] == x)
+           {
+               if(firstIndex == -1)
+               firstIndex = i;
+               lastIndex = i;
+           }
+       }
+        al.add(firstIndex);
+        al.add(lastIndex);
+        
+        return al;
+   }
+}
