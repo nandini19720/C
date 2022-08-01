@@ -1,0 +1,24 @@
+class solution{
+     public Node rotate(Node head, int k) {
+        if(head==null||head.next==null||k==0){
+            return head;
+            }
+            Node curr=head;
+            int length=1;
+            while(curr.next!=null){
+            length++;
+            curr=curr.next;
+            }
+            current.next=head;
+            k=k%length;
+            while(k!=0){
+              curr=curr.next;
+              k--;
+           }
+           head=current.next;
+           current.next=null;
+           return head;
+           }
+           }
+              
+            
