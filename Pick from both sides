@@ -1,0 +1,18 @@
+public class Solution {
+    public int solve(int[] A, int B) {
+        int currsum=0;
+        int n=A.length;
+        for(int i=0;i<B;i++){
+          currsum+=A[i];
+        }
+        int maxsum=currsum;
+        int inc=n-1;
+        int exc=B-1;
+        while(inc>=0 && exc>=0){
+            currsum+=A[inc--];
+            currsum-=A[exc--];
+            maxsum=Math.max(maxsum, currsum);
+        }
+       return maxsum;
+    }
+}
