@@ -1,0 +1,19 @@
+public class Solution {
+    public int perfectPeak(int[] A) {
+        boolean flag=true;
+        int max=A[0];
+        for(int i=1;i<A.length-1;i++){
+            if(A[i]>max){
+                for(int j=i+1;j<A.length;j++){
+                    if(A[i]>=A[j])flag=false;
+                }
+                if(flag)return 1;
+                else flag=true;
+            }
+            max=Math.max(max,A[i]);
+           
+        }
+        return 0;
+        
+    }
+}
