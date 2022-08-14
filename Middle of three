@@ -1,0 +1,12 @@
+class Solution{
+    int middle(int A, int B, int C){
+         if(B<A && B>C || B>A && B<C)
+       return B;
+       else if(C<A && C>B || C>A && C<B)
+       return C;
+       else
+       return A;
+   
+        
+    }
+}
