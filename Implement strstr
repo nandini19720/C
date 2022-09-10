@@ -1,0 +1,23 @@
+class GfG
+{
+    //Function to locate the occurrence of the string x in the string s.
+    int strstr(String s, String x)
+    {
+       return s.indexOf(x);
+}
+}
+ //or
+
+
+int strstr(string s, string x)
+{  
+   int n=s.size();
+   int m=x.size();
+   for(int i=0;i<n;i++){
+       if(s.substring(i,m)==x){
+           return i;
+           break;
+       }
+   }
+   return -1;
+}
